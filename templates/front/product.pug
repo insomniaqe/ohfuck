@@ -1,0 +1,145 @@
+extends layouts
+
+block content
+  main.product-page__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+    .container
+      .row
+        ul.col-12.breadcrumbs
+          li.breadcrumbs__item
+            a(href='index.html') Главная&nbsp;
+          li.breadcrumbs__item
+            a(href='#') | #{content['Наименование детали']}&nbsp;
+          li.breadcrumbs__item
+            a(href='#') | #{content['Марка']}&nbsp;
+          li.breadcrumbs__item
+            a(href='#') | #{content['Модель']}&nbsp;
+          li.breadcrumbs__item.active
+            a(href='#') | #{content['Наименование детали']} #{content['Марка']} #{content['Модель']} c #{content['Год']} г.
+    .container
+      .row
+        .col-lg-5
+          .product-photos
+            .product-photos__slider-wrapper
+              .swiper-container.product-photos__slider
+                .swiper-wrapper
+                  .swiper-slide.product-photos__slide
+                    img(src=`${content['URL фото детали']}`)
+                  //- .swiper-slide.product-photos__slide
+                  //-   img(src='', data-src='/img/engine-discount.png')
+                  //- .swiper-slide.product-photos__slide
+                  //-   img(src='', data-src='/img/engine-discount.png')
+                  //- .swiper-slide.product-photos__slide
+                  //-   img(src='', data-src='/img/engine-discount.png')
+                  //- .swiper-slide.product-photos__slide
+                  //-   img(src='', data-src='/img/engine-discount.png')
+                  //- .swiper-slide.product-photos__slide
+                  //-   img(src='', data-src='/img/engine-discount.png')
+                  //- .swiper-slide.product-photos__slide
+                  //-   img(src='', data-src='/img/engine-discount.png')
+              .swiper-button-prev.product-photos__button.product-photos__button--prev.product-photos__button--prev-0
+              .swiper-button-next.product-photos__button.product-photos__button--next.product-photos__button--next-0
+            .product-photos__pagination-wrapper
+              .swiper-container.product-photos__pagination
+                .swiper-wrapper
+                  .swiper-slide.product-photos__thumb(style='background-image: url(`${content["URL фото детали"]}`);')
+                  //- .swiper-slide.product-photos__thumb(style='background-image: url(/img/engine-discount.png);')
+                  //- .swiper-slide.product-photos__thumb(style='background-image: url(/img/engine-discount.png);')
+                  //- .swiper-slide.product-photos__thumb(style='background-image: url(/img/engine-discount.png);')
+                  //- .swiper-slide.product-photos__thumb(style='background-image: url(/img/engine-discount.png);')
+                  //- .swiper-slide.product-photos__thumb(style='background-image: url(/img/engine-discount.png);')
+                  //- .swiper-slide.product-photos__thumb(style='background-image: url(/img/engine-discount.png);')
+              .swiper-button-prev.product-photos__pagination-button.product-photos__pagination-button--prev.product-photos__pagination-button--prev-0
+              .swiper-button-next.product-photos__pagination-button.product-photos__pagination-button--next.product-photos__pagination-button--next-0
+        .col-xl-5.col-lg-7.product__info
+          h1.product__title #{content['Наименование детали']} #{content['Марка']} #{content['Модель']} c #{content['Год']} г. 
+          p.product__description
+            | #{content['Тип кузова']} #{content['Дверей']} дв.; #{content['КПП']}; #{content['Объем']}; #{content['Двигатель']}; #{content['Год']}.
+          p.product__description
+            | #{content['Описание']}
+            | #{content['Год начала выпуска']} - #{content['Год окончания выпуска']}
+          .product-note
+            .product-note__column
+              .product-note__wrapper
+                p.product-note__title Артикул:
+                p.product-note__text #{content['Артикул']}
+              .product-note__wrapper
+                p.product-note__title Доставка:
+                p.product-note__text #{content['Доставка в Санкт-Петербург 2-3 дня']}
+            .product-note__column
+              .product-note__wrapper
+                p.product-note__title Оригинал:
+                p.product-note__text Да
+              .product-note__wrapper
+                p.product-note__title Гарантия:
+                p.product-note__text Гарантия на все товары, уточняйте у менеджера
+            .product-note__column
+              .product-note__wrapper
+                p.product-note__title Оригинальный номер:
+                p.product-note__text 11657795499
+        .col-xl-2
+          .product-total
+            .product-total__upper
+              p.product-total__price
+                span.total Итог к оплате
+                |                             #{content['Цена']}
+              p.product-total__in-stock 2 шт. в наличии
+              button.btn.btn--product-buy Купить
+            .product-total__lower
+              p.product-total__callback Обратный звонок:
+              button.btn.btn--transparent.btn--product-callback Вопрос
+  section.best-offer
+    .container
+      .row
+        h3.col-12.section-title Популярные товары:
+        .col-12.best-offer__slider-container
+          .swiper-container.best-offer__slider
+            .swiper-wrapper
+              .swiper-slide.best-offer__item.best-offer__item--bestseller(data-highlight='Хит продаж')
+                img.best-offer__preview(src='', data-src='/img/1.jpg', alt='Двигатель на Audi TT 8N 1,8 T')
+                h5.best-offer__title Двигатель на Audi TT 8N 1,8 T
+                p.best-offer__text Оригинальный номер: 11000441271
+                p.best-offer__price 540 000 ₽
+                a.btn.btn--transparent.btn--best-offer(href='discount-product-page.html') Подробнее
+              .swiper-slide.best-offer__item.best-offer__item--bestseller(data-highlight='Хит продаж')
+                img.best-offer__preview(src='', data-src='/img/2.jpg', alt='Двигатель на Audi TT 8N 1,8 T')
+                h5.best-offer__title Двигатель на Audi TT 8N 1,8 T
+                p.best-offer__text Оригинальный номер: 11000441271
+                p.best-offer__price 540 000 ₽
+                a.btn.btn--transparent.btn--best-offer(href='product-page.html') Подробнее
+              .swiper-slide.best-offer__item.best-offer__item--bestseller(data-highlight='Хит продаж')
+                img.best-offer__preview(src='', data-src='/img/3.jpg', alt='Двигатель на Audi TT 8N 1,8 T')
+                h5.best-offer__title Двигатель на Audi TT 8N 1,8 T
+                p.best-offer__text Оригинальный номер: 11000441271
+                p.best-offer__price 540 000 ₽
+                a.btn.btn--transparent.btn--best-offer(href='product-page.html') Подробнее
+              .swiper-slide.best-offer__item.best-offer__item--bestseller(data-highlight='Хит продаж')
+                img.best-offer__preview(src='', data-src='/img/4.jpg', alt='Двигатель на Audi TT 8N 1,8 T')
+                h5.best-offer__title Двигатель на Audi TT 8N 1,8 T
+                p.best-offer__text Оригинальный номер: 11000441271
+                p.best-offer__price 540 000 ₽
+                a.btn.btn--transparent.btn--best-offer(href='product-page.html') Подробнее
+              .swiper-slide.best-offer__item.best-offer__item--bestseller(data-highlight='Хит продаж')
+                img.best-offer__preview(src='', data-src='/img/1.jpg', alt='Двигатель на Audi TT 8N 1,8 T')
+                h5.best-offer__title Двигатель на Audi TT 8N 1,8 T
+                p.best-offer__text Оригинальный номер: 11000441271
+                p.best-offer__price 540 000 ₽
+                a.btn.btn--transparent.btn--best-offer(href='product-page.html') Подробнее
+              .swiper-slide.best-offer__item.best-offer__item--bestseller(data-highlight='Хит продаж')
+                img.best-offer__preview(src='', data-src='/img/1.jpg', alt='Двигатель на Audi TT 8N 1,8 T')
+                h5.best-offer__title Двигатель на Audi TT 8N 1,8 T
+                p.best-offer__text Оригинальный номер: 11000441271
+                p.best-offer__price 540 000 ₽
+                a.btn.btn--transparent.btn--best-offer(href='product-page.html') Подробнее
+              .swiper-slide.best-offer__item.best-offer__item--bestseller(data-highlight='Хит продаж')
+                img.best-offer__preview(src='', data-src='/img/1.jpg', alt='Двигатель на Audi TT 8N 1,8 T')
+                h5.best-offer__title Двигатель на Audi TT 8N 1,8 T
+                p.best-offer__text Оригинальный номер: 11000441271
+                p.best-offer__price 540 000 ₽
+                a.btn.btn--transparent.btn--best-offer(href='product-page.html') Подробнее
+          .swiper-pagination.progress-pagination.best-offer__pagination
+          .swiper-button-prev.standart-navigation.standart-navigation--prev.best-offer__button--prev
+          .swiper-button-next.standart-navigation.standart-navigation--next.best-offer__button--next

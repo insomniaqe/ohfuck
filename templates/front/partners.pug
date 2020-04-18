@@ -1,0 +1,70 @@
+extends layouts
+
+block content
+  main.info-page__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+      .row
+        ul.col-12.breadcrumbs
+          li.breadcrumbs__item
+            a(href='index.html') Главная
+          li.breadcrumbs__item.active
+            | 
+            a(href='#') Партнерам
+        h2.col-12.section-title Партнерам
+        .col-12
+          .info-page__banner.info-page__banner--about
+            h3.info-page__title Надежные партнеры с большим опытом работы!
+            .about-statistics
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 5 лет
+                p.about-statistics__text
+                  | профессиональной 
+                  br
+                  | работы
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 5 000
+                p.about-statistics__text
+                  | качественно выполненых 
+                  br
+                  | заказов
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 30%
+                p.about-statistics__text
+                  | клиентов возращаются 
+                  br
+                  | к нам повторно
+      .row.info-page__row
+        article.col-12.info-page__article
+          p
+            | Компания «СПБ запчасти» также работает с магазинами, станциями технического обслуживания.
+            br
+            |                     Мы предоставляем комфортные условия для сотрудничества, 30% клиентов стали нашими крупными партнерами на специальных взаимовыгодных условиях.
+          p
+            | Подробнее об условиях программы лояльности вы можете узнать у нашего менеджера по номеру  или обратившись с запросом на нашу почту.
+          p
+            | Мы всегда рады сотрудничеству ! Поэтому предлагаем индивидуальный подход к каждому партнеру.
+      .row.info-page__row
+        h2.col-12.section-title
+          | Наши 
+          span постоянные партнеры
+          br
+          |  работающие с нами долгие годы
+        .col-12.partners__wrapper
+          .swiper-container.partners__slider
+            .swiper-wrapper
+              .swiper-slide.partners__slide
+                img.partners__img(src='img/partners/1.jpg', alt='Сертификат')
+              .swiper-slide.partners__slide
+                img.partners__img(src='img/partners/2.jpg', alt='Сертификат')
+              .swiper-slide.partners__slide
+                img.partners__img(src='img/partners/3.jpg', alt='Сертификат')
+              .swiper-slide.partners__slide
+                img.partners__img(src='img/partners/4.jpg', alt='Сертификат')
+              .swiper-slide.partners__slide
+                img.partners__img(src='img/partners/1.jpg', alt='Сертификат')
+          .swiper-pagination.progress-pagination.partners__pagination
+          .swiper-button-prev.standart-navigation.standart-navigation--prev.partners__button--prev
+          .swiper-button-next.standart-navigation.standart-navigation--next.partners__button--next

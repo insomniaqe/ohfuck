@@ -1,0 +1,8 @@
+.fix_grid {
+  margin: 0 15px;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+}
+.grid_block {
+  display: block!important;
+}

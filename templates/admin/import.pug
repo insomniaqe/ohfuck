@@ -1,0 +1,27 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible', content='ie=edge')
+  link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+  title Document
+.container-fluid
+  .row
+    .col
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fluid
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo03', aria-controls='navbarTogglerDemo03', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        a.navbar-brand.mb-0.h1(href='/') Админ панель
+        #navbarTogglerDemo03.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+            li.nav-item.active
+              a.nav-link(href='/import')
+                | Импорт товара  
+                span.sr-only (current)
+  .row(style='margin-top:35px;')
+    .col
+      .custom-file.shadow-lg.p-3.mb-5.bg-white.rounded
+        form(action='/admin/import/upload', method='post', enctype='multipart/form-data')
+          input#customFile.custom-file-input(type='file', name='import')
+          label.custom-file-label(for='customFile') Выберите файл выгрузки
+          input.btn.btn-primary(type='submit')

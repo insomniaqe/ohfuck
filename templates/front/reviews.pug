@@ -1,0 +1,118 @@
+extends layouts
+
+block content
+  main.reviews__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+    .container
+      .row
+        include includes/breadcrumbs
+    .container
+      .row
+        h2.col-12.section-title Отзывы
+        .col-lg-3.col-md-4
+          button.btn.btn--leave-review(type='button', data-toggle='modal', data-target='#reviewModal') Оставить отзыв
+        .col-lg-9.col-md-8
+          p.review-reminder
+            | Отзывы помогают нам лучше понимать потребности покупателей. Мы публикуем похвалу
+            | и критику и улучшаем сервис на основе этой информации.
+        .col-12.review__list
+          .review
+            .review__avatar(style='background-image: url(img/review-avatar.png);')
+            .review__wrapper
+              .review__name-wrapper
+                p.review__name Сергей Игнатенко
+                .star-rating
+                  .star-rating__wrap
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+              time.review__date 5 апреля 2019
+              article.review__text
+                | Очень хорошие цены, всегда доставляют в срок. Интуитивно понятный сайт и магазины. Я доволен.
+                | Главное преимущество, что большинство товаров сразу же доставляют, видно есть свой склад, поэтому не приходится ждать
+                | долго нужные детали. Ну и сам персонал радует всегда приветливые и добродушные словно пришел к себе домой.
+              .review__rating
+          .review
+            .review__avatar(style='background-image: url(img/review-avatar.png);')
+            .review__wrapper
+              .review__name-wrapper
+                p.review__name Сергей Игнатенко
+                .star-rating
+                  .star-rating__wrap
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+              time.review__date 5 апреля 2019
+              article.review__text
+                | Очень хорошие цены, всегда доставляют в срок. Интуитивно понятный сайт и магазины. Я доволен.
+                | Главное преимущество, что большинство товаров сразу же доставляют, видно есть свой склад, поэтому не приходится ждать
+                | долго нужные детали. Ну и сам персонал радует всегда приветливые и добродушные словно пришел к себе домой.
+              .review__rating
+          .review
+            .review__avatar
+            .review__wrapper
+              .review__name-wrapper
+                p.review__name Сергей Игнатенко
+                .star-rating
+                  .star-rating__wrap
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+              time.review__date 5 апреля 2019
+              article.review__text
+                | Очень хорошие цены, всегда доставляют в срок. Интуитивно понятный сайт и магазины. Я доволен.
+                | Главное преимущество, что большинство товаров сразу же доставляют, видно есть свой склад, поэтому не приходится ждать
+                | долго нужные детали. Ну и сам персонал радует всегда приветливые и добродушные словно пришел к себе домой.
+              .review__rating
+          .review.review--admin
+            .review__wrapper
+              .review__name-wrapper
+                p.review__name Администрация сайта
+              time.review__date 5 апреля 2019
+              article.review__text
+                | Сергей, спасибо за высокую оценку нашей работы. Будем рады видеть Вас в числе наших постоянных клиентов. Обращайтесь в
+                | любое удобное время и мы с удовольствием поможем Вам.
+              .review__rating
+          .review
+            .review__avatar
+            .review__wrapper
+              .review__name-wrapper
+                p.review__name Сергей Игнатенко
+                .star-rating
+                  .star-rating__wrap
+                    .star-rating__ico
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+                    .star-rating__ico.active
+              time.review__date 5 апреля 2019
+              article.review__text
+                | Очень хорошие цены, всегда доставляют в срок. Интуитивно понятный сайт и магазины. Я доволен.
+                | Главное преимущество, что большинство товаров сразу же доставляют, видно есть свой склад, поэтому не приходится ждать
+                | долго нужные детали. Ну и сам персонал радует всегда приветливые и добродушные словно пришел к себе домой.
+              .review__rating
+      .row
+        .col-12.pagination
+          ul.pagination__wrapper
+            li.pagination__button.pagination__button--prev
+              a.pagination__link(href='#')  < 
+            li.pagination__button
+              a.pagination__link(href='#') 1
+            li.pagination__button.pagination__button--active
+              a.pagination__link(href='#') 2
+            li.pagination__button
+              a.pagination__link(href='#') 3
+            li.pagination__button.pagination__button--gap ...
+            li.pagination__button
+              a.pagination__link(href='#') 10
+            li.pagination__button.pagination__button--next
+              a.pagination__link(href='#')  > 

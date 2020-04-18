@@ -1,0 +1,27 @@
+extends layouts
+
+block content
+  script(src="/js/delCart.js")
+  script(src="/js/getCart.js")
+  main.cart-page__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+      .row
+        include includes/breadcrumbs
+      .row
+        .col-12
+          h2.section-title.catalog-search__title Корзина товаров
+        .col-lg-10.product-preview
+        .col-xl-2
+          .product-total.product-total--cart
+            .product-total__upper
+              p.product-total__price
+                span.total Итог к оплате
+                | 0
+              p.product-total__in-stock 0 товаров
+              a.btn.btn--product-buy(href="checkout.html") Купить
+            .product-total__lower
+              p.product-total__callback Очистить корзину:
+              button.btn.btn--transparent.btn--cart-clear Удалить

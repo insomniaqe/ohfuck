@@ -1,0 +1,102 @@
+aside.col-lg-3.categories.categories--expand
+  .categories__header
+    a(href='catalog') Подбор запчастей
+  form.categories__body.form(action='/products' method='post')
+    .hints-select
+      input.form__input.form__input--aside.hints-select__input(type='text', placeholder='Марка а/м' name='search')
+      ul.hints-select__dropdown
+        li.hints-select__item ALFA ROMEO
+        li.hints-select__item AUDI
+        li.hints-select__item BMW
+        li.hints-select__item HONDA
+        li.hints-select__item IVECO
+        li.hints-select__item JEEP
+        li.hints-select__item LEXUS
+        li.hints-select__item MITSUBISHI
+        li.hints-select__item PEUGEOT
+      span.hints-select__close x
+    .hints-select
+      input.form__input.form__input--aside.hints-select__input(type='text', placeholder='Модель а/м')
+      ul.hints-select__dropdown
+        li.hints-select__item.empty Результаты не найдены
+        li.hints-select__item A3
+        li.hints-select__item A3
+        li.hints-select__item A3
+        li.hints-select__item A3
+        li.hints-select__item A3
+        li.hints-select__item A3
+        li.hints-select__item A3
+      span.hints-select__close x
+    .hints-select__group
+      .hints-select
+        input.form__input.form__input--aside.hints-select__input(type='text', placeholder='Начало выпуска' name='datemin')
+        ul.hints-select__dropdown
+          li.hints-select__item 1990
+          li.hints-select__item 1991
+          li.hints-select__item 1992
+          li.hints-select__item 1993
+          li.hints-select__item 1994
+          li.hints-select__item 1995
+          li.hints-select__item 1996
+          li.hints-select__item 1997
+          li.hints-select__item 1998
+          li.hints-select__item 1999
+          li.hints-select__item 2000
+          li.hints-select__item 2001
+          li.hints-select__item 2002
+          li.hints-select__item 2003
+          li.hints-select__item 2004
+          li.hints-select__item 2005
+          li.hints-select__item 2006
+          li.hints-select__item 2007
+          li.hints-select__item 2008
+          li.hints-select__item 2009
+          li.hints-select__item 2010
+        span.hints-select__close x
+      .hints-select
+        input.form__input.form__input--aside.hints-select__input(type='text', placeholder='Конец выпуска' name='datemax')
+        ul.hints-select__dropdown
+          li.hints-select__item 1990
+          li.hints-select__item 1991
+          li.hints-select__item 1992
+          li.hints-select__item 1993
+          li.hints-select__item 1994
+          li.hints-select__item 1995
+          li.hints-select__item 1996
+          li.hints-select__item 1997
+          li.hints-select__item 1998
+          li.hints-select__item 1999
+          li.hints-select__item 2000
+          li.hints-select__item 2001
+          li.hints-select__item 2002
+          li.hints-select__item 2003
+          li.hints-select__item 2004
+          li.hints-select__item 2005
+          li.hints-select__item 2006
+          li.hints-select__item 2007
+          li.hints-select__item 2008
+          li.hints-select__item 2009
+          li.hints-select__item 2010
+        span.hints-select__close x
+    .hints-select
+      //- input.form__input.form__input--aside.hints-select__input(type='text', placeholder='Выберите запчасть')
+      //- ul.hints-select__dropdown
+      //-   li.hints-select__item.empty Результаты не найдены
+      //-   li.hints-select__item Турбокомпрессор
+      //-   li.hints-select__item Турбокомпрессор
+      //-   li.hints-select__item Турбокомпрессор
+      //-   li.hints-select__item Турбокомпрессор
+      //-   li.hints-select__item Турбокомпрессор
+      //-   li.hints-select__item Турбокомпрессор
+      //-   li.hints-select__item Турбокомпрессор
+      //- span.hints-select__close x
+    //- input.form__input.form__input--aside(type='text', placeholder='Введите номер запчасти')
+    //- select.form__select.catalog-search__select(name='sort')
+    //-   option(selected='') Сортировка товаров
+    //-   option(value='up') По возрастанию цены
+    //-   option(value='down') По убыванию цены
+    //- label.custom-checkbox.custom-checkbox--aside
+    //-   input(type='checkbox')
+    //-   span
+    //-   |                         Убрать «под заказ»
+    button.btn.btn--home-filters.aside Показать

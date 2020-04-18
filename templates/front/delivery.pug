@@ -1,0 +1,102 @@
+extends layouts
+
+block content
+  main.info-page__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+      .row
+        include includes/breadcrumbs
+        h2.col-12.section-title Доставка и оплата
+        .col-12
+          .info-page__banner.info-page__banner--delivery
+            h3.info-page__title
+              | Доставка и оплата самыми 
+              br
+              |  удобными способами
+            .about-statistics
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 5 лет
+                p.about-statistics__text
+                  | профессиональной 
+                  br
+                  | работы
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 5 000
+                p.about-statistics__text
+                  | качественно выполненых 
+                  br
+                  | заказов
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 30%
+                p.about-statistics__text
+                  | клиентов возращаются 
+                  br
+                  | к нам повторно
+      .row.info-page__row
+        article.col-12.info-page__article
+          p.medium-font
+            | Для оплаты Вам необходимо добавить выбранный товар корзину нажать оплатить, наш менеджер проверит наличие на
+            | складе и выдаст вам подтверждение, после которого вы можете оплатить счет-фактуру удобным для вас способом. Для
+            | удобства покупки мы принимаем платежи  на Р/с, Яндекс деньги, на карту.
+          p
+            | Доставка товара осуществляется по всей территории России удобным для вас грузоперевозчиком. Отправка товара осуществляется ежедневно
+            | с 10:00 до 18:00, в случае оплаты заказа до 14:00 оправка осуществляется в тот же день, в случае  расчета после обеда , отправляем
+            | товар на следующий день.
+          p
+            | Доставка Почтой России и СДЭК, ДЛ, КИТ, Энергия, ПЭК по территории Российской Федерации. 
+            br
+            | Доставка по СПБ до двери (платная), по городу доставка 500 рублей, либо пункт выдачи (до 2500 рублей в зависимости от агрегата).
+          img(src='/img/blue2.png' style="width:150px")
+          p
+            | - Перевод средств осуществляется в адрес ООО «ОРЦ» (система «ИнвойсБокс»). ООО «ОРЦ» является уполномоченным лицом Поставщика по получению переводов/оплат.
+            | - Росиия, г. Санкт-Петербург, ул. Маршала Казакова, д. 26. Телефон: 8(800)222-25-55
+          a(href="http://kb.i-transfer.ru") инструкции по оплате
+          br
+          a(href="https://www.invoicebox.ru/ru/support/buyer/") база знаний
+          br
+          a(href="http://locator.i-transfer.ru") сервис Локатор
+      .row.info-page__row
+        h2.col-12.section-title
+          span 6 простых шагов
+          |  работы в нашем 
+          br
+          | интерент магазине
+        .col-11.step-progress.step-progress--info-page
+          .step-progress__circle.active
+            p.step-progress__title Этап 1
+            p.step-progress__text
+              | Выбор интересующего 
+              br
+              | Вас товара
+          .step-progress__circle.active
+            p.step-progress__title Этап 2
+            p.step-progress__text
+              | Добавление его 
+              br
+              | в корзину
+          .step-progress__circle.active
+            p.step-progress__title Этап 3
+            p.step-progress__text
+              | Оплата заказа 
+              br
+              | удобным способом
+          .step-progress__circle.active
+            p.step-progress__title Этап 4
+            p.step-progress__text
+              | Мы формируем 
+              br
+              | посылку
+          .step-progress__circle.active
+            p.step-progress__title Этап 5
+            p.step-progress__text
+              | Отправка товара 
+              br
+              | в место получения
+          .step-progress__circle.active
+            p.step-progress__title Этап 6
+            p.step-progress__text
+              | Вы получаете 
+              br
+              | заказ

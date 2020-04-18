@@ -1,0 +1,67 @@
+extends layouts
+
+block content
+  - var productLength = content.length;
+  main.products-catalog__main.main--categories-expanded
+    .container
+      .row
+        include includes/filter
+        include includes/menuheader
+      .row
+        include includes/breadcrumbs
+        include includes/filterMobile
+      .row
+        .col-lg-9.categories-expanded.product-preview
+          - for(var i = 0; i < productLength; i ++)
+            .product-preview__wrapper
+              .product-preview__left
+                h3.product-preview__title(data-highlight='Новый') #{content[i]['Наименование детали']} #{content[i]['Марка']} - #{content[i]['Модель']} c #{content[i]['Год начала выпуска']} г.
+                .product-preview__info-wrapper
+                  img.product-preview__img(src=`${content[i]['URL фото детали']}`, alt='Турбокомпрессор (турбина) BMW 3 - Series E90/E91 c 2005 г.')
+                  .product-preview__info
+                    p.product-preview__text
+                      | #{content[i]['Объем']}, #{content[i]['Двигатель']}, #{content[i]['КПП']}, #{content[i]['Тип кузова']}, #{content[i]['Год']}.
+                    .product-note.product-note--preview
+                      .product-note__column
+                        .product-note__wrapper
+                          p.product-note__title Артикул:
+                          p.product-note__text #{content[i]['Артикул']} 
+                      .product-note__column
+                        .product-note__wrapper
+                          p.product-note__title Оригинал:
+                          p.product-note__text -
+                      .product-note__column
+                        .product-note__wrapper
+                          p.product-note__title Оригинальный номер:
+                          p.product-note__text -
+              .product-total.product-total--preview
+                .product-total__upper.product-total__upper--preview
+                  p.product-total__price.product-total__price--preview
+                    | #{content[i]['Цена']}
+                  button.btn.btn--product-buy(data-articul=`${content[i]['Артикул']}`) Купить
+                  a.btn.btn--transparent.btn--product-more(href=`product/${content[i]["Артикул"]}`) Подробнее
+      .row
+        .col-lg-9.categories-expanded.pagination
+          ul.pagination__wrapper
+            //- li.pagination__button.pagination__button--prev
+            //-   a.pagination__link(href=`/products?${prewPage}`)  < 
+            //- if currentPage==''
+            //-   li.pagination__button.pagination__button--active
+            //-     a.pagination__link(href='#') 1
+            //- else if currentPage==1
+            //-   li.pagination__button.pagination__button--active
+            //-     a.pagination__link(href='#') 1
+            //- - for(var c = 1; c < 4; c++)
+            //-   if currentPage!==c
+            //-     li.pagination__button
+            //-       a.pagination__link(href=`/products?${c}`) #{c}
+            //-   else
+            //-     li.pagination__button.pagination__button--active
+            //-       a.pagination__link #{c}
+            //- li.pagination__button.pagination__button--active
+            //-   a.pagination__link(href='#') 2
+            //- li.pagination__button.pagination__button--gap ...
+            //- li.pagination__button
+            //-   a.pagination__link(href='#') 10
+            //- li.pagination__button.pagination__button--next
+            //-   a.pagination__link(href=`/products?${nextPage}`)  > 

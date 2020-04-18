@@ -1,0 +1,76 @@
+extends layouts
+
+block content
+  main.info-page__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+      .row
+        include includes/breadcrumbs
+        h2.col-12.section-title Гарантии
+        .col-12
+          .info-page__banner.info-page__banner--guarantees
+            h3.info-page__title
+              | Еврокачество и гарантии 
+              br
+              | залог нашего успеха
+            .about-statistics
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 5 лет
+                p.about-statistics__text
+                  | профессиональной 
+                  br
+                  | работы
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 5 000
+                p.about-statistics__text
+                  | качественно выполненых 
+                  br
+                  | заказов
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 30%
+                p.about-statistics__text
+                  | клиентов возращаются 
+                  br
+                  | к нам повторно
+      .row.info-page__row
+        article.col-12.info-page__article
+          p
+            | «СПБ запчасти» предоставляет гарантии на приобретенные автозапчасти до 30 дней при условии установки на сертифицированной станции технического обслуживания.
+          p.list-title.medium-font Условия гарантии:
+          ul
+            li
+              | совершаем обмен, либо возврат денежных средств, при наличии чека и заказа-наряда от сертифицированного сервиса
+            li
+              | гарантия  действует в течении 30 дней с момента установки ( выдачи заказа-наряда)
+            li гарантия распространяется на все запчасти приобретенные на сайте
+            li
+              | гарантия работает в случае установки и снятия обменной детали только сертифицированным сервисом со всеми
+              br
+              |                         подтверждающими документами
+          p.list-title Для решения возникших вопросов вы можете перезвонить нам по номеру:
+          a.phone-link(href='#') 8 (800) 222 25 55
+      .row.info-page__row
+        h2.col-12.section-title
+          | Все наши запчасти имеют 
+          span
+            | сертификаты 
+            br
+            |                 подтверждения качества
+        .col-12.certificates__wrapper.certificates__wrapper--guarantees
+          .swiper-container.guarantees__slider
+            .swiper-wrapper
+              .swiper-slide
+                img.guarantees__img(src='', data-src='img/certificate.png', alt='Сертификат')
+              .swiper-slide
+                img.guarantees__img(src='', data-src='img/certificate.png', alt='Сертификат')
+              .swiper-slide
+                img.guarantees__img(src='', data-src='img/certificate.png', alt='Сертификат')
+              .swiper-slide
+                img.guarantees__img(src='', data-src='img/certificate.png', alt='Сертификат')
+              .swiper-slide
+                img.guarantees__img(src='', data-src='img/certificate.png', alt='Сертификат')
+          .swiper-pagination.progress-pagination.guarantees__pagination
+          .swiper-button-prev.standart-navigation.standart-navigation--prev.guarantees__button--prev
+          .swiper-button-next.standart-navigation.standart-navigation--next.guarantees__button--next

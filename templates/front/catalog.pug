@@ -1,0 +1,19 @@
+extends layouts
+
+block content
+  main.catalog__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+      .row
+        ul.col-12.breadcrumbs
+          li.breadcrumbs__item
+            a(href='index.html') Главная
+          li.breadcrumbs__item.active
+            | 
+            a(href='#') Каталог товаров
+      .row.grid_block.models-catalog__screen.active.car
+        .fix_grid.models-catalog__column
+          - for(var i = 0; i < catalog.length; i++)
+              a.models-catalog__link(href=`/products?mark=${catalog[i]}`) #{catalog[i]}

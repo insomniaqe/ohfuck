@@ -1,0 +1,62 @@
+extends layouts
+
+block content
+  main.info-page__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+      .row
+        include includes/breadcrumbs
+        h2.col-12.section-title Контакты
+        .col-12
+          .info-page__banner.info-page__banner--contacts
+            h3.info-page__title
+              | Контакты для связи 
+              br
+              |  с нами
+            .about-statistics
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 5 лет
+                p.about-statistics__text
+                  | профессиональной 
+                  br
+                  | работы
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 5 000
+                p.about-statistics__text
+                  | качественно выполненых 
+                  br
+                  | заказов
+              .about-statistics__item
+                p.clipped-text.about-statistics__title 30%
+                p.about-statistics__text
+                  | клиентов возращаются 
+                  br
+                  | к нам повторно
+      .row.map-row
+        ul.col-lg-3.col-md-5.contacts-list
+          li.contacts-list__item
+            .contacts-list__icon
+            p.contacts-list__title телефон:
+            a.contacts-list__text(href='#') 8 (800) 222 25 55
+          li.contacts-list__item
+            .contacts-list__icon
+            p.contacts-list__title электронная почта:
+            a.contacts-list__text(href='#') spb-razborka@mail.ru
+          li.contacts-list__item
+            .contacts-list__icon
+            p.contacts-list__title адрес:
+            p.contacts-list__text
+              | Санкт-Петербург, 
+              br
+              | ул.Гагарина, д.50 и т.п.
+          li.contacts-list__item
+            .contacts-list__icon
+            p.contacts-list__title юридическое лицо:
+            p.contacts-list__text
+              | Название фирмы 
+              br
+              | ОГРН: 314784730200200 и номер ИНН: 470379663500
+        .col-lg-9.col-md-7.map-wrapper
+          .map(data-lat='59.876418', data-lng='30.257557')

@@ -1,0 +1,191 @@
+extends layouts
+
+block content
+  main.products-catalog__main.main--categories-expanded
+    .container
+      .row
+        include includes/filter
+        include includes/menuheader
+      .row
+        ul.col-lg-9.categories-expanded.breadcrumbs
+          li.breadcrumbs__item
+            a(href='index.html') Главная
+          li.breadcrumbs__item.active
+            | 
+            a(href='#') Акции
+        .col-lg-9.categories-expanded.catalog-search
+          h2.section-title.catalog-search__title Запчасти на двигатели
+          form.form.catalog-search__form(action='#')
+            .catalog-search__form-row
+              select.form__select.catalog-search__select(name='mark')
+                option(selected='') Марка
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+              select.form__select.catalog-search__select(name='model')
+                option(selected='') Модель
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+              select.form__select.catalog-search__select(name='generation')
+                option(selected='') Поколение
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+              button.btn.btn--home-filters.desktop Показать
+            .catalog-search__form-row
+              .input-label__wrapper
+                label.input-label(for='part') Выберите деталь:
+                select#part.form__select.form__input--label.catalog-search__select(name='part')
+                  option(selected='') Запчасть
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+              .input-label__wrapper
+                label.input-label(for='sort') Сортировка товаров:
+                select#sort.form__select.form__input--label.catalog-search__select(name='sort')
+                  option(selected='') По возрастанию
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+              .catalog-search__radio.form__input--label.input-label__wrapper
+                p.input-label Выберите качество:
+                label.custom-checkbox.custom-checkbox--catalog-search
+                  input(type='radio', name='quality', checked='')
+                  span Все
+                label.custom-checkbox.custom-checkbox--catalog-search
+                  input(type='radio', name='quality')
+                  span Б/У
+                label.custom-checkbox.custom-checkbox--catalog-search
+                  input(type='radio', name='quality')
+                  span Новые
+              button.btn.btn--home-filters.mobile Показать
+      .row
+        .col-lg-9.categories-expanded.product-preview
+          .product-preview__wrapper
+            .product-preview__left
+              h3.product-preview__title(data-highlight='Новый') Турбокомпрессор (турбина) BMW 3 - Series E90/E91 c 2005 г.
+              .product-preview__info-wrapper
+                img.product-preview__img(src='', data-src='img/1.jpg', alt='Турбокомпрессор (турбина) BMW 3 - Series E90/E91 c 2005 г.')
+                .product-preview__info
+                  p.product-preview__text
+                    | 2 л, Дизель, TDI, АКПП (авт.), Седан, 2006, 2л, Дизель, TDI, 204D4 / M47D20, 49135-05620, Седан, черный,.
+                  .discount-timer.discount-timer--product-preview
+                    p.discount-timer__descriptor
+                      | Поспешите! Акция 
+                      br
+                      |  закончится через:
+                    .discount-timer__circles-wrapper
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--days(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Дней
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--hours(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Часов
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--minutes(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Минут
+            .product-total.product-total--preview
+              .product-total__upper.product-total__upper--discount
+                p.product-total__price.product-total__price--discount 139 990 ₽
+                p.product-total__price.product-total__price--old
+                  span.total Старая цена:
+                  span.price 540 000 ₽
+                button.btn.btn--product-buy.discount Купить
+                a.btn.btn--transparent.btn--product-more.discount(href='discount-product-page.html') Подробнее
+          .product-preview__wrapper
+            .product-preview__left
+              h3.product-preview__title(data-highlight='Новый') Турбокомпрессор (турбина) BMW 3 - Series E90/E91 c 2005 г.
+              .product-preview__info-wrapper
+                img.product-preview__img(src='', data-src='img/1.jpg', alt='Турбокомпрессор (турбина) BMW 3 - Series E90/E91 c 2005 г.')
+                .product-preview__info
+                  p.product-preview__text
+                    | 2 л, Дизель, TDI, АКПП (авт.), Седан, 2006, 2л, Дизель, TDI, 204D4 / M47D20, 49135-05620, Седан, черный,.
+                  .discount-timer.discount-timer--product-preview
+                    p.discount-timer__descriptor
+                      | Поспешите! Акция 
+                      br
+                      |  закончится через:
+                    .discount-timer__circles-wrapper
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--days(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Дней
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--hours(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Часов
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--minutes(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Минут
+            .product-total.product-total--preview
+              .product-total__upper.product-total__upper--discount
+                p.product-total__price.product-total__price--discount 139 990 ₽
+                p.product-total__price.product-total__price--old
+                  span.total Старая цена:
+                  span.price 540 000 ₽
+                button.btn.btn--product-buy.discount Купить
+                a.btn.btn--transparent.btn--product-more.discount(href='discount-product-page.html') Подробнее
+          .product-preview__wrapper
+            .product-preview__left
+              h3.product-preview__title(data-highlight='Новый') Турбокомпрессор (турбина) BMW 3 - Series E90/E91 c 2005 г.
+              .product-preview__info-wrapper
+                img.product-preview__img(src='', data-src='img/1.jpg', alt='Турбокомпрессор (турбина) BMW 3 - Series E90/E91 c 2005 г.')
+                .product-preview__info
+                  p.product-preview__text
+                    | 2 л, Дизель, TDI, АКПП (авт.), Седан, 2006, 2л, Дизель, TDI, 204D4 / M47D20, 49135-05620, Седан, черный,.
+                  .discount-timer.discount-timer--product-preview
+                    p.discount-timer__descriptor
+                      | Поспешите! Акция 
+                      br
+                      |  закончится через:
+                    .discount-timer__circles-wrapper
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--days(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Дней
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--hours(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Часов
+                      .discount-timer__progress-wrapper
+                        svg.progress-ring.discount-timer__ring(width='70', height='70')
+                          circle.progress-ring__circle.discount-timer__circle.discount-timer__circle--minutes(stroke-width='4', fill='#f9f9f9', r='31', cx='35', cy='35')
+                          text.discount-timer__counter(x='50%', y='50%') 5
+                        span.discount-timer__text Минут
+            .product-total.product-total--preview
+              .product-total__upper.product-total__upper--discount
+                p.product-total__price.product-total__price--discount 139 990 ₽
+                p.product-total__price.product-total__price--old
+                  span.total Старая цена:
+                  span.price 540 000 ₽
+                button.btn.btn--product-buy.discount Купить
+                a.btn.btn--transparent.btn--product-more.discount(href='discount-product-page.html') Подробнее
+      .row
+        .col-lg-9.categories-expanded.pagination
+          ul.pagination__wrapper
+            li.pagination__button.pagination__button--prev
+              a.pagination__link(href='#')  < 
+            li.pagination__button
+              a.pagination__link(href='#') 1
+            li.pagination__button.pagination__button--active
+              a.pagination__link(href='#') 2
+            li.pagination__button
+              a.pagination__link(href='#') 3
+            li.pagination__button.pagination__button--gap ...
+            li.pagination__button
+              a.pagination__link(href='#') 10
+            li.pagination__button.pagination__button--next
+              a.pagination__link(href='#')  > 

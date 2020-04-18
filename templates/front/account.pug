@@ -1,0 +1,56 @@
+extends layouts
+
+block content
+  main.account__main
+    .container
+      .row
+        include includes/toggleMenu
+        include includes/menuheader
+      .row
+        include includes/breadcrumbs
+      .row
+        .col-12
+          h2.section-title Личный кабинет
+        .col-lg-3
+          ul.account-menu
+            li.account-menu__item.active
+              a.account-menu__link(href="/account") Личный кабинет
+            li.account-menu__item
+              a.account-menu__link(href="/cart") Мои заказы
+            li.account-menu__item
+              button.account-menu__link(type="button") Обратная связь
+            li.account-menu__item
+              button.account-menu__link(type="button") Выйти
+        .col-lg-9
+          .private-info
+            label.private-info__avatar.edit-avatar
+              input(type="file" name="avatar")
+            .private-info__wrapper
+              p.private-info__title #{info.name}
+              .private-info__text
+                | Номер телефона:
+                .editable
+                  span #{info.phone}
+                  input.form__input.edit-input(type="text" value="+7 (000) 000-00-00")
+                  button.btn.edit-btn Сохранить
+              .private-info__text
+                | Адрес почты:
+                .editable
+                  span Не задано
+                  input.form__input.edit-input(type="text" value="info@mail.com")
+                  button.btn.edit-btn Сохранить
+              .private-info__text
+                | Всего заказов: 
+                span 0
+              .private-info__text
+                | Адрес доставки:
+                .editable
+                  span Не задано
+                  input.form__input.edit-input(type="text" value="г. Санкт-Петербург, пр-кт. Ленина, д. 50")
+                  button.btn.edit-btn Сохранить
+              .private-info__text
+                | Индекс:
+                .editable
+                  span Не задано
+                  input.form__input.edit-input(type="text" value="198 096")
+                  button.btn.edit-btn Сохранить

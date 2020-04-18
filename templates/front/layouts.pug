@@ -1,0 +1,240 @@
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='/css/main.min.css')
+    link(rel="stylesheet", href="/css/fix.css")
+    title СПб Разборка
+  body.home
+    section.top-line
+      .container
+        .row
+          .col-3.top-line__phone-wrapper
+            a.top-line__phone(href='#') 8 (800) 222 25 55
+          .col-4.top-line__region Ленинградская область
+          .col-5.top-line__contact-buttons
+            a.top-line__social-button(href='#')
+              img(src='/img/icons/up-vk.svg')
+            a.top-line__social-button(href='#')
+              img(src='/img/icons/up-fb.svg')
+            a.top-line__social-button(href='#')
+              img(src='/img/icons/up-ok.svg')
+            a.top-line__social-button(href='#')
+              img(src='/img/icons/up-insta.svg')
+            button.btn.btn--top-line(type='button', data-toggle='modal', data-target='#callbackModal') Заказать обратный звонок
+    header.header
+      .container
+        .row.header__row
+          a.col-lg-3.col-md-4.col-9.header__logo(href='/')
+            img(src='/img/logo.png', alt='СПб Разборка')
+          .col-md-1.col-3.header__menu-button
+            button.btn.btn--menu-open
+              img(src='/img/icons/categories-menu.svg')
+          .col-lg-9.col-md-7.header__right
+            form.header__search.form(action='/products' method='post')
+              .form__wrapper-search
+                input.form__input.form__input--search(type='text', name='search', placeholder='Наименование или номер запчасти')
+                .header__search-overlay
+                button.btn.btn--header-search(type='submit')
+                  img(src='/img/icons/search.svg')
+            .header__controls
+              .header__cart.cart(data-toggle='modal', data-target='#cartModal')
+                img.cart__img(src='/img/icons/cart.svg')
+                .cart__right
+                  a(href='/cart')
+                    span.cart__count 0
+                    span.cart__text Корзина
+              .header__authorization.authorization
+                img.authorization__img(src='/img/icons/user.svg', data-toggle='modal', data-target='#signIn')
+                .authorization__right
+                  .authorization__upper
+                  if user === false
+                    button(class="authorization__sign-in" data-toggle="modal" data-target="#signIn") Войти
+                    <span> | </span>
+                    button(class="authorization__sign-up" data-toggle="modal" data-target="#signUp") Регистрация
+                  else
+                    button.authorization__sign-in.log_out Выход
+                    .authorization__lower
+                      a.authorization__text(href='/account') Личный кабинет
+      .mnu
+        .container.mnu__container
+          .row.mnu__main
+            form.col-12.form.mnu__form(action='/products' method='post')
+              .form__wrapper.mnu__form-wrapper
+                input.form__input.mnu__input(type='text', name='search', placeholder='Наименование или VIN')
+                .header__search-overlay
+                button.btn.btn--header-search(type='submit')
+                  img(src='/img/icons/search.svg')
+            a.col-12.mnu__link(href='cart-page.html') Корзина
+            a.col-12.mnu__link(href='delivery') Доставка и оплата
+            a.col-12.mnu__link(href='guarantees') Гарантии
+            a.col-12.mnu__link(href='reviews') Отзывы
+            a.col-12.mnu__link(href='about') О нас
+            a.col-12.mnu__link(href='faq') Вопросы и ответы
+            a.col-12.mnu__link(href='contacts') Контакты
+          .row.mnu__footer
+            a.col-12.mnu__phone-link(href='#') 8 (800) 222 25 55
+            a.col-12.mnu__email-link(href='#') mail@spb-zapchast.ru
+            p.col-12.mnu__address 117342, г.Санкт-Петербург, ул. Ленина д.56
+            .col-12.mnu__buttons-wrapper
+              button.btn.btn--mnu-authorization(data-toggle='modal', data-target='#signIn') Личный кабинет
+              button.btn.btn--mnu-callback(data-toggle='modal', data-target='#callbackModal') Заказать звонок
+    block content
+    footer.page-footer
+      .container
+        .row
+          .col-lg-3.page-footer__contacts
+            .page-footer__phone-wrapper
+              a.page-footer__phone-link(href='#') 8 (800) 222 25 55
+              button.page-footer__callback(type='button', data-toggle='modal', data-target='#callbackModal') Заказать обратный звонок
+            .page-footer__email-wrapper
+              a.page-footer__email-link(href='#') MAIL@SPB-Zapchast.ru
+          include includes/menufooter
+          .col-lg-4.page-footer__socials
+            p.page-footer__socials-title Мы в социальных сетях:
+            .page-footer__socials-wrapper
+              a.page-footer__socials-link(href='#')
+                img(src='', data-src='/img/icons/down-vk.svg')
+              a.page-footer__socials-link(href='#')
+                img(src='', data-src='/img/icons/down-fb.svg')
+              a.page-footer__socials-link(href='#')
+                img(src='', data-src='/img/icons/down-ok.svg')
+              a.page-footer__socials-link(href='#')
+                img(src='', data-src='/img/icons/down-insta.svg')
+            p.page-footer__address 117342, г.Санкт-Петербург, ул. Ленина д.56
+        .row
+          .col-12.copyright
+            p.copyright__notification © ООО«СПБ-Запчасти», 2014-2019
+            a.privacy-policy(href='/conf') Политика конфиденциальности
+    #callbackModal.modal.fade
+      .modal-dialog.small(role='document')
+        form.modal-content.form
+          .modal-header
+            button.modal-close(type='button', data-dismiss='modal')
+              img(src='/img/icons/modal-close.svg')
+            h4.modal-title.modal-title-uppercase Бесплатная консультация
+            p.modal-description
+              | Введите ниже ваши контактные данные 
+              br
+              |  и наш менеджер перезвонит Вам
+          .modal-body
+            input.form__input.modal-input(type='text', placeholder='ФИО')
+            input.form__input.modal-input(type='text', placeholder='+7 (___) ___-__-__')
+            button.btn.btn--modal-submit Заказать обратный звонок
+          .modal-footer
+            label.custom-checkbox.privacy-policy-checkbox
+              input(type='checkbox', checked='')
+              span
+              |                         Я принимаю условия 
+              a(href='/conf') передачи информации
+    #signIn.modal.fade
+      .modal-dialog.small(role='document')
+        .modal-content.form
+          .modal-header
+            button.modal-close(type='button', data-dismiss='modal')
+              img(src='/img/icons/modal-close.svg')
+            h4.modal-title.modal-title-uppercase Войти в личный кабинет
+            p.modal-description Введите ниже ваши контактные данные для авторизации
+          .modal-body
+            input.form__input.modal-input.signInPhone.signPhone(type='text', placeholder='+7 (___) ___-__-__', name="phone")
+            button.btn.btn--modal-submit(type='submit') Войти в личный кабинет
+            a.forgot-password(href='#') Забыли пароль?
+          .modal-footer.modal-footer-button.open-new-modal(data-target='#signUp')
+            | Регистрация
+    #smsSignIn.modal.fade.sms-confirm
+      .modal-dialog.medium(role='document')
+        .modal-content
+          button.modal-close(type='button', data-dismiss='modal')
+            img(src='/img/icons/modal-close.svg')
+          .modal-body.sms-confirm__body
+            h4.modal-title Подтверждение номера телефона
+            .sms-confirm__wrapper
+              .sms-confirm__descriptor
+                p
+                  | На номер: 
+                  span.returnNumber +7 (900) 000 00-00
+                  |  Вам было отправлено SMS с кодом подтверждения.
+              .form.sms-confirm__form
+                input.requestId(type='hidden', name="requestId")
+                input.form__input.sms-confirm__input.confirm(type='text', placeholder='Код СМС' name="pin")
+                button.btn.btn--sms-confirm(type='submit') Подтвердить
+                button.sms-confirm__send-again(type='button') Отправить повторно
+    #signUp.modal.fade
+      .modal-dialog.small(role='document')
+        .modal-content.form
+          .modal-header
+            button.modal-close(type='button', data-dismiss='modal')
+              img(src='/img/icons/modal-close.svg')
+            h4.modal-title.modal-title-uppercase Регистрация
+            p.modal-description Введите ниже ваши контактные данные для регистрации
+          .modal-body
+            input.form__input.modal-input.signName(type='text', placeholder='Ваше имя' name="name")
+            input.form__input.modal-input.signPhone(type='text', placeholder='+7 (___) ___-__-__', name="phone")
+            button.btn.btn--modal-submit(type='submit') Регистрация
+          .modal-footer.modal-footer-button.open-new-modal(data-target='#signIn')
+            | У меня есть аккаунт
+    #smsConfirm.modal.fade.sms-confirm
+      .modal-dialog.medium(role='document')
+        .modal-content
+          button.modal-close(type='button', data-dismiss='modal')
+            img(src='/img/icons/modal-close.svg')
+          .modal-body.sms-confirm__body
+            h4.modal-title Подтверждение номера телефона
+            .sms-confirm__wrapper
+              .sms-confirm__descriptor
+                p
+                  | На номер: 
+                  span.returnNumber +7 (900) 000 00-00
+                  |  Вам было отправлено SMS с кодом подтверждения.
+              .form.sms-confirm__form
+                input.requestId(type='hidden', name="requestId")
+                input.form__input.sms-confirm__input.confirm(type='text', placeholder='Код СМС' name="pin")
+                button.btn.btn--sms-confirm(type='submit') Подтвердить
+                button.sms-confirm__send-again(type='button') Отправить повторно
+    //- #cartModal.modal.fade.cart-modal
+    //-   .modal-dialog.large(role='document')
+    //-     .modal-content
+    //-       .modal-header.cart-modal__header
+    //-         button.modal-close(type='button', data-dismiss='modal')
+    //-           img(src='/img/icons/modal-close.svg')
+    //-         h4.modal-title.cart-modal__title Товар успешно добавлен в корзину!
+    //-       .modal-body.cart-modal__body
+    //-         table.cart-modal__table
+    //-           tbody
+    //-             tr.cart-modal__table-row
+    //-               th.cart-modal__table-heading.vendor-code Артикул
+    //-               th.cart-modal__table-heading.original-number Ориг. номер
+    //-               th.cart-modal__table-heading.item-name Название
+    //-               th.cart-modal__table-heading.condition Сост.
+    //-               th.cart-modal__table-heading.item-price Цена
+    //-             tr.cart-modal__table-row
+    //-               //- td.cart-modal__table-data.vendor-code 00693301447942
+    //-               //- td.cart-modal__table-data.original-number 11000441271
+    //-               //- td.cart-modal__table-data.item-name Двигатель BMW 1 - Series E87/E81 c 2004 г.
+    //-               //- td.cart-modal__table-data.condition Б/У
+    //-               //- td.cart-modal__table-data.item-price 54 000 ₽
+    //-         .cart-modal__mobile-table
+    //-           .cart-modal__card.cart-item
+    //-             .cart-item__data-title Артикул
+    //-             .cart-item__data 00693301447942
+    //-             .cart-item__data-title Ориг. номер
+    //-             .cart-item__data 11000441271
+    //-             .cart-item__data-title Название
+    //-             .cart-item__data Двигатель BMW 1 - Series E87/E81 c 2004 г.
+    //-             .cart-item__data-title Состояние
+    //-             .cart-item__data Б/У
+    //-             .cart-item__data-title Цена
+    //-             .cart-item__data 54 000 ₽
+    //-       .modal-footer.cart-modal__footer
+    //-         p.cart-modal__items-count В корзине: 0 товара на сумму 0 ₽
+    //-         .cart-modal__buttons-wrapper
+    //-           a.btn.btn--cart-modal(href='cart-page.html') В корзину
+    //-           button.btn.btn--transparent(data-dismiss='modal') Продолжить
+    script(src='/js/libs.min.js')
+    script(src='/js/common.js')
+    script(src="/js/1Tim.js")
+    script(src="/js/forms.js")
+    script(src="/js/buy.js")
+    script(src="/js/cart.js")

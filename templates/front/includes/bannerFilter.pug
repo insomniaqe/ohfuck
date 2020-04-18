@@ -1,0 +1,44 @@
+section.home-filters
+  .container
+    .row.home-filters__header
+      h3.col-12.section-title
+        span Поиск
+        |  качественных автозапчастей 
+        br
+        | из Европы
+      .col-lg-3.col-md-6.home-filters__advantages
+        h5.clipped-text 2 000 000
+        p качественных автозапчастей
+      .col-lg-7.col-md-6.home-filters__advantages
+        h5.clipped-text 5% скидки
+        p на профессиональную установку
+      .col-lg-2.home-filters__descriptor
+        p
+          | Быстрый и удобный 
+          br
+          | поиск
+    .row.home-filters__body
+      .col-3.home-filters__icon-wrapper
+        img.home-filters__icon(src='', data-src='img/auto-search.png')
+      form.col-lg-9.col-12.home-filters__form(action='#')
+        .home-filters__form-outer
+          .home-filters__form-inner
+            p.home-filters__form-title Выберите модель, марку и поколение автомобиля, на которую Вам нужна автозапчасть
+            p.home-filters__form-text нажмите на выпадающий список ниже:
+            .home-filters__inputs-wrapper
+              select.form__select.form__select--home-filters(name='mark')
+                option(selected='') Марка
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+              select.form__select.form__select--home-filters(name='model')
+                option(selected='') Модель
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+              select.form__select.form__select--home-filters(name='generation')
+                option(selected='') Поколение
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+              button.btn.btn--home-filters Найти
